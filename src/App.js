@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { login } from "./Services";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export const App = () => {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const sendData = evt => {
+    console.log("LOCAL STORAGE, ", localStorage);
+    let temp = "";
+    login(userName, password).then(result => {
+      localStorage.setItem("JWT TOKEN", result.token);
+      console.log(localStorage);
+    });
+
+    evt.preventDefault();
+  };
+  const signOut = () => {
+    localStorage.clear();
+  };
+
+  return localStorage.length === 0 ? (
+    <div>
+      <form onSubmit={sendData}>
+        <input
+          type="text"
+          value={userName}
+          placeholder="Username"
+          onChange={e => setUserName(e.target.value)}
+          required={true}
+        ></input>
+        <input
+          required={true}
+          type="password"
+          value={password}
+          placeholder="********"
+          onChange={e => setPassword(e.target.value)}
+        ></input>
+
+        <button type="submit">
+          <h2>Login</h2>
+        </button>
+      </form>
     </div>
+  ) : (
+    <>
+<h1>Welcome, {userName}</h1>
+      <button
+        onClick={() => {
+          signOut();
+        }}
+      >
+        <h3>SIGNOUT</h3>
+      </button>
+    </>
   );
-}
-
+};
 export default App;
