@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmsData xmlns="nis.cim.sp.ml.nagra.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" executionDate="2019-06-24T16:08:53Z" xsi:schemaLocation="Nagravision-Import-Full-Specification-v5.x.xsd">
+  <editorialContent providerResourceId="GT_DRM_021219_Test01" name="GT_DRM_021219_Test01" providerId="GLOBAL" contentType="movie" profileIds="pivot_creation">
+    <metadataSet locale="en_US">
+      <metadata key="Title">Title</metadata>
+      <metadata key="Description">Description</metadata>
+      <metadata key="Duration">111</metadata>
+      <metadata key="Categories">Categories</metadata>
+      <metadata key="tournament_name">tournament name</metadata>
+    </metadataSet>
+    <metadataSet locale="es_ES">
+      <metadata key="Title">Title</metadata>
+      <metadata key="Description">Description.</metadata>
+      <metadata key="Duration">111</metadata>
+      <metadata key="Categories">Categories</metadata>
+      <metadata key="tournament_name">tournament name</metadata>
+    </metadataSet>
+        <metadataSet locale="none">
+        <metadata key="Definition">SD</metadata>
+        <metadata key="geoFilteringBillAddrCountryList">GT</metadata>
+        <metadata key="geoFilteringBillAddrCountryWhiteList">true</metadata>
+        <metadata key="countryCodeWhiteList">GT</metadata>
+    </metadataSet>
+    <period start="2019-11-25T00:00:00Z" end="2020-12-01T00:00:00Z"/>
+    <referenceAsset uri="GT_021219_TEST01_NEW.mp4" type="HD">
+            <metadataSet locale="none">
+                <metadata key="FileSize">256</metadata>
+                <metadata key="FrameDuration">75000</metadata>
+                <metadata key="Comment">Final Check</metadata>
+                <metadata key="BitRate">1</metadata>
+            </metadataSet>
+            <assetDeviceLocation relativePath="" storageDeviceId="deviceId1" type="source"/>
+    </referenceAsset>
+    <images>
+        <image id="GT_DRM_021219_Test01_image1" uri="https://pbs.twimg.com/media/DoltLG1X4AAoPe7.jpg">
+        <height>1200</height>
+        <width>801</width>
+        <aspect>16x9</aspect>
+        <primary>true</primary>
+      </image>
+    </images>
+  </editorialContent>
+  <technicalContent providerResourceId="providerResourceId" name="technical content name" providerId="GLOBAL" profileId="package_creation_hls_drm">
+        <metadataSet locale="en_US">
+      <metadata key="Definition">HD</metadata>
+    </metadataSet>
+    <metadataSet locale="es_ES">
+      <metadata key="Definition">HD</metadata>
+    </metadataSet>
+    <period start="2019-11-11T00:00:00Z" end="2020-12-01T00:00:00Z"/>
+    <editorialContentRef providerId="GLOBAL" providerResourceId="GT_DRM_021219_Test01"/>
+     <securityInfo id="securityId" securityDeviceId="MCM">
+  </securityInfo>
+  </technicalContent>
+    <technicalContent providerResourceId="ProviderResourceId" name="technical content name" providerId="GLOBAL" profileId="package_creation_dash_drm">
+        <metadataSet locale="en_US">
+      <metadata key="Definition">HD</metadata>
+    </metadataSet>
+    <metadataSet locale="es_ES">
+      <metadata key="Definition">HD</metadata>
+    </metadataSet>
+    <period start="2019-11-11T00:00:00Z" end="2020-12-01T00:00:00Z"/>
+    <editorialContentRef providerId="GLOBAL" providerResourceId="ProviderResourceId"/>
+     <securityInfo id="GT_DRM_021219_Test01_DASH" securityDeviceId="MCM">
+  </securityInfo>
+  </technicalContent>
+  <contentPublishingWindow providerId="GLOBAL" providerResourceId="ProviderResourceId" displayPriority="1" name="Content name" publishToEndUser="true" type="vod">
+    <period start="2019-11-11T00:00:00Z" end="2020-12-01T00:00:00Z"/>
+    <technicalContentRef providerId="GLOBAL" providerResourceId="ProviderResourceId"/>
+    <nodeRef providerId="GLOBAL" providerResourceId="ProviderResourceId"/>
+  </contentPublishingWindow>
+  <contentPublishingWindow providerId="GLOBAL" providerResourceId="ProviderResourceId" displayPriority="1" name="Content name" publishToEndUser="true" type="vod">
+    <period start="2019-11-11T00:00:00Z" end="2020-12-01T00:00:00Z"/>
+    <technicalContentRef providerId="GLOBAL" providerResourceId="ProviderResourceId"/>
+    <nodeRef providerId="GLOBAL" providerResourceId="NODE_1572535048925"/>
+  </contentPublishingWindow>
+  <productLink>
+    <productRef providerId="ProviderId" providerResourceId="ProviderResourceId"/>
+    <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow"/>
+    <validityPeriodSet>
+      <validityPeriod start="2019-10-01T00:00:00Z" end="2020-07-01T00:00:00Z"/>
+    </validityPeriodSet>
+  </productLink>
+  <productLink>
+    <productRef providerId="ProviderId" providerResourceId="ProviderResourceId"/>
+    <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow"/>
+    <validityPeriodSet>
+      <validityPeriod start="2019-10-01T00:00:00Z" end="2020-07-01T00:00:00Z"/>
+    </validityPeriodSet>
+  </productLink>
+  <productLink>
+    <productRef providerId="ProviderId" providerResourceId="ProviderResourceId"/>
+    <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow"/>
+    <validityPeriodSet>
+      <validityPeriod start="2019-10-01T00:00:00Z" end="2020-07-01T00:00:00Z"/>
+    </validityPeriodSet>
+  </productLink>
+  <productLink>
+    <productRef providerId="ProviderId" providerResourceId="ProviderResourceId"/>
+    <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow"/>
+    <validityPeriodSet>
+      <validityPeriod start="2019-10-01T00:00:00Z" end="2020-07-01T00:00:00Z"/>
+    </validityPeriodSet>
+  </productLink>
+</cmsData>

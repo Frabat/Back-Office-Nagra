@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmsData xsi:schemaLocation="Nagravision-Import-Full-Specification-v5.x.xsd"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="nis.cim.sp.ml.nagra.com" executionDate="2019-09-20T11:10:18Z">
+        <editorialContent providerId="Datafactory" name="Match Name" providerResourceId="488689" contentType="movie">
+            <metadataSet locale="none">
+                <metadata key="Definition">HD</metadata>
+                <metadata key="Title">"Match Name"</metadata>
+                <metadata key="match_start">201912050000</metadata>
+                <metadata key="match_end">201912050200</metadata>
+                <metadata key="match_start_scheduled">201912050000</metadata>
+                <metadata key="geoFilteringBillAddrCountryList">GT</metadata>
+                <metadata key="geoFilteringBillAddrCountryWhiteList">true</metadata>
+                <metadata key="countryCodeWhiteList">GT</metadata>
+                <metadata key="isLive">true</metadata>
+                <metadata key="isEnriched">false</metadata>
+			    <metadata key="canal">canal</metadata>
+            </metadataSet>
+            <metadataSet locale="es_ES">
+                <metadata key="Title">"Match Name"</metadata>
+                <metadata key="Synopsis">Synopsis</metadata>
+                <metadata key="Description">Description</metadata>
+                <metadata key="Categories">Categories</metadata>
+                <metadata key="tournament_name">tournament name</metadata>
+            </metadataSet>
+            <metadataSet locale="en_US">
+                <metadata key="Title">"Title"</metadata>
+                <metadata key="Title">Title</metadata>
+                <metadata key="Synopsis">Synopsis</metadata>
+                <metadata key="Description">Description</metadata>
+                <metadata key="Categories">Categories</metadata>
+                <metadata key="tournament_name">tournament name</metadata>
+            </metadataSet>
+            <period end="2019-12-05T02:00:00Z" start="2019-12-05T00:00:00Z"/>
+            <images>
+                <image uri="https://1.bp.blogspot.com/-HHzOzdUeRmk/XFZQPb-hhtI/AAAAAAAAAA0/DhQAkzVs6Q83-CoStpu5A17ANnI9x70aACLcBGAs/s1600/503.jpg" id="TEST02_PRY_05121900_001">
+                    <height>299</height>
+                    <width>169</width>
+                    <aspect>poster</aspect>
+                    <category>Iconic</category>
+                    <primary>true</primary>
+                </image>
+            </images>
+        </editorialContent>
+        <editorialChannel providerId="GLOBAL" name="editorialName" providerResourceId="TEST02">
+            <channelEvents endUntil="2019-12-05T02:00:00Z" startFrom="2019-12-05T00:00:00Z">
+                <event providerId="Datafactory" name="Match Name" providerResourceId="E488689">
+                    <period end="2019-12-05T02:00:00Z" start="2019-12-05T00:00:00Z"/>
+                    <timeShifting startOverSupport="true"  shortTermCatchUpSupport="false" longTermCatchUpSupport="false"/>
+                    <editorialContentRef providerId="Datafactory" providerResourceId="488689"/>
+                </event>
+            </channelEvents>
+        </editorialChannel>
+</cmsData>
