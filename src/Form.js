@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "react-jsonschema-form";
-var parser = require('xml2json')
+var xml2js = require('xml2js')
 // const uiSchema = {
 //   "ui:order": ["*", "metadataSet"]
 // };
@@ -509,8 +509,9 @@ export default class FormField extends React.Component {
   // }
   formSubmission = ({ formData }, e) => {
     var temp = JSON.stringify(formData);
-    var xml = parser.toXml(formData)
-    console.log(xml)
+    var builder = new xml2js.Builder();
+    var xml = builder.buildObject(temp)
+    console.dir(xml)
     // this.setState({data : temp})
     // console.log(this.state.data)
     // console.log(formData)
