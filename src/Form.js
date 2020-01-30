@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-jsonschema-form";
 import {upload} from './Services'
+
 // var xml2js = require("xml2js");
 var convert = require("xml-js");
 
@@ -588,7 +589,14 @@ const schema = {
     }
   }
 };
-
+const uiSchema = {
+  "cmsData" : {
+    "ui:widget" : "hidden",
+    "_attributes" : {
+      "ui:widget" : "hidden"
+    }
+  }
+}
 export default class FormField extends React.Component {
   state = {
     data: {}
@@ -602,7 +610,7 @@ export default class FormField extends React.Component {
       data : temp
     });
     console.log(localStorage.JWT_TOKEN)
-    upload(localStorage.storage, this.state.data)
+    upload(localStorage.storage, temp)
     
   };
 
@@ -614,7 +622,7 @@ export default class FormField extends React.Component {
       
       <Form
         schema={schema}
-        
+        uiSchema = {uiSchema}
         formData={this.formData}
         onSubmit={this.formSubmission}
       />
