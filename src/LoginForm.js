@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
     console.log("LOCAL STORAGE, ", localStorage);
     let temp = "";
     login(this.state.userName, this.state.password).then(result => {
-      localStorage.setItem("JWT TOKEN", result.token);
+      localStorage.setItem("JWT_TOKEN", result.token);
       console.log(localStorage);
     });
     evt.preventDefault();

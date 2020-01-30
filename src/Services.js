@@ -15,9 +15,23 @@ myHeaders.append("Referer", "http://localhost:4004/");
 myHeaders.append("Accept-Encoding", "gzip, deflate, br");
 myHeaders.append("Accept-Language", "it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7");
 
+export const upload = (jwtToken, formdata) => {
+  myHeaders.append("Authorization", jwtToken);
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: formdata,
+    redirect: "follow"
+  };
+  fetch("http://esercizio.verdesca.ovh/api/upload", requestOptions)
+    .then(response => console.log(response))
+    .then(result => console.log(result))
+    .catch(error => console.log("error", error));
+};
+
 export const login = (username, password) => {
   var raw = JSON.stringify({ username: username, password: password });
- 
+
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
@@ -30,3 +44,5 @@ export const login = (username, password) => {
 
     .catch(error => console.log("error", error));
 };
+
+// export const

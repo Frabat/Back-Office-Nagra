@@ -1,2 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<root>{"cmsData":{"xmlns":"nis.cim.sp.ml.nagra.com","xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","executionDate":"2019-06-24T16:08:53Z","xsi:schemaLocation":"Nagravision-Import-Full-Specification-v5.x.xsd","editorialContent":{"providerResourceId":"GT_DRM_021219_Test01","name":"GT_DRM_021219_Test01","providerId":"Global","contentType":"Movie","profileIds":"Pivot_creation","period":{"start":"2019-11-25T00:00:00Z","end":"2020-12-01T00:00:00Z"},"referenceAsset":{"uri":"GT_021219_TEST01_NEW.mp4","type":"HD","metadataSet":{"locale":"none"},"assetDeviceLocation":{"type":"source"},"images":{"image":{"id":"GT_DRM_021219_Test01_image1","uri":"https://pbs.twimg.com/media/DoltLG1X4AAoPe7.jpg","height":1200,"width":801,"aspect":"16x9","primary":true}}}}}}</root>
+<cmsData xmlns="nis.cim.sp.ml.nagra.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" executionDate="2019-06-24T16:08:53Z" xsi:schemaLocation="Nagravision-Import-Full-Specification-v5.x.xsd">
+    <editorialContent providerResourceId="GT_DRM_021219_Test01" name="GT_DRM_021219_Test01" providerId="Global" contentType="Movie" profileIds="Pivot_creation">
+        <period start="2019-11-25T00:00:00Z" end="2020-12-01T00:00:00Z" />
+        <referenceAsset uri="GT_021219_TEST01_NEW.mp4" type="HD" />
+        <images>
+            <image id="GT_DRM_021219_Test01_image1" uri="https://pbs.twimg.com/media/DoltLG1X4AAoPe7.jpg">
+                <height>1200</height>
+                <width>801</width>
+                <aspect>16x9</aspect>
+                <primary>true</primary>
+            </image>
+        </images>
+    </editorialContent>
+    <productLink>
+        <productRef providerId="ProviderId" providerResourceId="ProviderResourceId" />
+        <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow" />
+        <validityPeriodSet>
+            <validityPeriod start="2019-10-01T00:00:00Z" end="2020-07-01T00:00:00Z" />
+        </validityPeriodSet>
+    </productLink>
+    <productLink>
+        <productRef providerId="ProviderId" providerResourceId="ProviderResourceId" />
+        <marketableRef providerId="GLOBAL" providerResourceId="ProviderResourceId" type="contentPublishingWindow" />
+    </productLink>
+    <contentPublishingWindow providerId="GLOBAL" providerResourceId="ProviderResourceId" displayPriority="1" name="Content name" publishToEndUser="true" type="vod">
+        <period start="2019-11-11T00:00:00Z" end="2020-12-01T00:00:00Z" />
+        <technicalContentRef providerId="GLOBAL" providerResourceId="ProviderResourceId" />
+        <nodeRef providerId="GLOBAL" providerResourceId="NODE_1572535048925" />
+    </contentPublishingWindow>
+</cmsData>
