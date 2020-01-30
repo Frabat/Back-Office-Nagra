@@ -1,0 +1,329 @@
+{
+    "title": "CMSData",
+    "type": "object",
+    "properties": {
+        "cmsData": {
+            "type": "object",
+            "title": "CMS Data",
+            "properties": {
+                "_attributes": {
+                    "type": "object",
+                    "properties": {
+                        "xsi:schemaLocation": {
+                            "title": "xsi:schemaLocation",
+                            "type": "string",
+                            "default": "Nagravision-Import-Full-Specification-v5.x.xsd"
+                        },
+                        "xmlns:xsi": {
+                            "title": "xmlns:xsi",
+                            "type": "string",
+                            "format": "uri",
+                            "default": "http://www.w3.org/2001/XMLSchema-instance"
+                        },
+                        "xmlns": {
+                            "title": "xmlns",
+                            "type": "string",
+                            "default": "nis.cim.sp.ml.nagra.com"
+                        },
+                        "executionDate": {
+                            "title": "Execution Date",
+                            "type": "string",
+                            "default": "2019-09-20T11:10:18Z",
+                            "format": "date-time"
+                        }
+                    }
+                },
+                "editorialContent": {
+                    "type": "object",
+                    "title": "Editorial Content",
+                    "properties": {
+                        "_attributes": {
+                            "type": "object",
+                            "properties": {
+                                "providerId": {
+                                    "type": "string",
+                                    "title": "Provider ID",
+                                    "default": "Datafactory"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "title": "Name",
+                                    "default": "Match Name"
+                                },
+                                "providerResourceId": {
+                                    "type": "string",
+                                    "title": "Provider Resource Id",
+                                    "default": "488689"
+                                },
+                                "contentType": {
+                                    "type": "string",
+                                    "title": "Content Type",
+                                    "default": "movie"
+                                }
+                            }
+                        },
+                        "metadataSet": {
+                            "type": "array",
+                            "title": "metadataSet",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "_attributes": {
+                                        "type": "object",
+                                        "properties": {
+                                            "locale": {
+                                                "type": "string",
+                                                "title": "locale",
+                                                "default": "en_US"
+                                            }
+                                        }
+                                    },
+                                    "metadata": {
+                                        "type": "array",
+                                        "title": "metadata",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "_attributes": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "key": {
+                                                            "type": "string",
+                                                            "title": "Key",
+                                                            "default": "Title"
+                                                        }
+                                                    }
+                                                },
+                                                "_text": {
+                                                    "type": "string",
+                                                    "title": "Value",
+                                                    "default": "Title"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "period": {
+                            "type": "object",
+                            "title": "Period",
+                            "properties": {
+                                "_attributes": {
+                                    "type": "object",
+                                    "properties": {
+                                        "start": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "default": "2019-11-25T00:00:00Z"
+                                        },
+                                        "end": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "default": "2020-12-01T00:00:00Z"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "images": {
+                            "type": "object",
+                            "title": "Images",
+                            "properties": {
+                                "image": {
+                                    "type": "object",
+                                    "title": "Image",
+                                    "properties": {
+                                        "_attributes": {
+                                            "type": "object",
+                                            "properties": {
+                                                "uri": {
+                                                    "type": "string",
+                                                    "title": "uri",
+                                                    "format": "uri",
+                                                    "default": "https: //1.bp.blogspot.com/-HHzOzdUeRmk/XFZQPb-hhtI/AAAAAAAAAA0/DhQAkzVs6Q83-CoStpu5A17ANnI9x70aACLcBGAs/s1600/503.jpg"
+                                                },
+                                                "id": {
+                                                    "type": "string",
+                                                    "title": "Id",
+                                                    "default": "TEST02_PRY_05121900_001"
+                                                }
+                                            }
+                                        },
+                                        "height": {
+                                            "title": "Height",
+                                            "type": "string",
+                                            "default": "299"
+                                        },
+                                        "width": {
+                                            "title": "Width",
+                                            "type": "string",
+                                            "default": "169"
+                                        },
+                                        "aspect": {
+                                            "title": "Aspect",
+                                            "type": "string",
+                                            "default": "poster"
+                                        },
+                                        "category": {
+                                            "title": "Category",
+                                            "type": "string",
+                                            "default": "Iconic"
+                                        },
+                                        "primary": {
+                                            "title": "Primary",
+                                            "type": "boolean",
+                                            "default": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "editorialChannel": {
+                    "type": "object",
+                    "title": "Editorial Channel",
+                    "properties": {
+                        "_attributes": {
+                            "type": "object",
+                            "properties": {
+                                "providerId": {
+                                    "type": "string",
+                                    "title": "Provider ID",
+                                    "default": "GLOBAL"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "title": "Name",
+                                    "default": "editorialName"
+                                },
+                                "providerResourceId": {
+                                    "type": "string",
+                                    "title": "Provider resource ID",
+                                    "default": "TEST02"
+                                }
+                            }
+                        },
+                        "channelEvents": {
+                            "title": "Channel Events",
+                            "type": "object",
+                            "properties": {
+                                "_attributes": {
+                                    "type": "object",
+                                    "properties": {
+                                        "startFrom": {
+                                            "type": "string",
+                                            "title": "Start-from",
+                                            "format": "date-time",
+                                            "default": "2019-12-05T00:00:00Z"
+                                        },
+                                        "endUntil": {
+                                            "type": "string",
+                                            "title": "End-until",
+                                            "format": "date-time",
+                                            "default": "2019-12-05T02:00:00Z"
+                                        }
+                                    }
+                                },
+                                "event": {
+                                    "type": "object",
+                                    "title": "Event",
+                                    "properties": {
+                                        "_attributes": {
+                                            "type": "object",
+                                            "properties": {
+                                                "providerId": {
+                                                    "type": "string",
+                                                    "title": "Provider ID",
+                                                    "default": "Datafactory"
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "title": "Name",
+                                                    "default": "Match Name"
+                                                },
+                                                "providerResourceId": {
+                                                    "type": "string",
+                                                    "title": "Provider resource ID",
+                                                    "default": "E488689"
+                                                }
+                                            }
+                                        },
+                                        "period": {
+                                            "type": "object",
+                                            "title": "Period",
+                                            "properties": {
+                                                "_attributes": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "start": {
+                                                            "title": "Start",
+                                                            "type": "string",
+                                                            "format": "date-time",
+                                                            "default": "2019-11-25T00:00:00Z"
+                                                        },
+                                                        "end": {
+                                                            "title": "End",
+                                                            "type": "string",
+                                                            "format": "date-time",
+                                                            "default": "2020-12-01T00:00:00Z"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "timeShifting": {
+                                            "type": "object",
+                                            "title": "Time Shifting",
+                                            "properties": {
+                                                "_attributes": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "StartOverSupport": {
+                                                            "type": "boolean",
+                                                            "default": true
+                                                        },
+                                                        "shortTermCatchUpSupport": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        },
+                                                        "longTermCatchUpSupport": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "editorialContentRef": {
+                                            "type": "object",
+                                            "title": "Editorial content ref.",
+                                            "properties": {
+                                                "_attributes": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "providerId": {
+                                                            "type": "string",
+                                                            "title": "Provider ID",
+                                                            "default": "Datafactory"
+                                                        },
+                                                        "providerResourceId": {
+                                                            "type": "string",
+                                                            "title": "Provider resource ID",
+                                                            "default": "488689"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
