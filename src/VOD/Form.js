@@ -117,7 +117,9 @@ export default class VodForm extends React.Component {
     console.log(localStorage.JWT_TOKEN);
     upload(this.state.jwtToken, temp);
     filesaver.saveAs(
-      new Blob([temp], { type: "text/plain;charset=utf-8" }),
+      new Blob([temp], {
+        type: 'application/xml; version= "1.0" ;encoding = "UTF-8"'
+      }),
       "VOD.xml"
     );
   };

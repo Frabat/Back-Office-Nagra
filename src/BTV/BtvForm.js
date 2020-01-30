@@ -144,8 +144,8 @@ export default class BtvForm extends React.Component {
     console.log(localStorage.JWT_TOKEN);
     upload(this.state.jwtToken, temp);
     filesaver.saveAs(
-      new Blob([new XMLSerializer().serializeToString(document)], {
-        type: "application/xhtml+xml;charset=" + document.characterSet
+      new Blob([temp], {
+        type: 'application/xml; version= "1.0" ;encoding = "UTF-8"'
       }),
       "BTV.xml"
     );
