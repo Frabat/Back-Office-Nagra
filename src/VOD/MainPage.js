@@ -1,8 +1,8 @@
 import React from "react";
-import VodForm from "./Form";
 import Collapsible from "react-collapsible";
-import { Card, Col, FormGroup, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
+import VodForm from "./Form";
 export default class Main extends React.Component {
   state = {
     userName: "",
@@ -18,7 +18,9 @@ export default class Main extends React.Component {
         userName: null
       });
   }
-
+  clearStorage(){
+    localStorage.clear();
+  }
   render() {
     console.log(this.state.userName);
     console.log(localStorage.getItem("JWT_TOKEN"));
@@ -47,6 +49,7 @@ export default class Main extends React.Component {
             </Collapsible>
           </Col>
         </Row>
+        <button onClick = {this.clearStorage} style = {{width : "50", height : "30"}}/>
       </div>
     );
   }
