@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginForm from "./LoginForm";
-import Main from "./VOD/MainPage";
+import Main from "./MainPage";
 
 ReactDOM.render(
   <Router>
@@ -12,8 +12,8 @@ ReactDOM.render(
         <Route exact path="/login" component={LoginForm} />
       </Switch>
     </div>
-  </Router>,
-
+  </Router>, 
+  
   document.getElementById('root')
 
 );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from "react-jsonschema-form";
+//import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import schema from "./BtvSchema.json"
 import "./BtvStyle.scss"
 import { CardBody, Card } from 'reactstrap';
@@ -80,7 +81,8 @@ export default class BtvForm extends React.Component {
                 // "xmlns": { classNames: "col-md-6 col float-left" },
                 "xsi:schemaLocation": { "ui:widget": "hidden" },
                 "xmlns:xsi": { "ui:widget": "hidden" },
-                "xmlns": { "ui:widget": "hidden" }
+                "xmlns": { "ui:widget": "hidden" },
+                "executionDate": { classNames: "col-md-2 col space-around " }
 
 
             },
