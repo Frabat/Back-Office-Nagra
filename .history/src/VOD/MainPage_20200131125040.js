@@ -1,3 +1,4 @@
+
 import React from "react";
 import VodForm from "./Form";
 // import Collapsible from "react-collapsible";
@@ -6,14 +7,15 @@ import BtvForm from './../BTV/BtvForm';
 //import { Form } from 'react-jsonschema-form';
 
 
+var isVodVisible: false;
+var isBtvVisible: false;
 
 export default class Main extends React.Component {
   state = {
     userName: "",
     data: {},
     token: null,
-    openVod: false,
-    openBtv: false
+    open: true
 
 
   };
@@ -31,8 +33,14 @@ export default class Main extends React.Component {
     localStorage.clear();
   }
 
-  toggleVod = () => this.setState({ openVod: !this.state.openVod });
-  toggleBtv = () => this.setState({ openBtv: !this.state.openBtv });
+  handleVodClick = () => {
+    isVodVisible = !isVodVisible;
+    isBtvVisible = false;
+  }
+  handleBtvClick = () => {
+    isBtvVisible = !isBtvVisible;
+    isVodVisible = false;
+  }
 
   render() {
     console.log(this.state.userName);
@@ -41,14 +49,14 @@ export default class Main extends React.Component {
       <div>
         <Navbar style={{ backgroundColor: "#6E918C" }}>
           <Nav>
-            <h3 style={{ color: "#F5FFFD" }}>Benvenuto {this.state.userName}</h3>
+            <h3 style={{ color: "#F5FFFD" }}>Benvenuto @User1 {this.state.userName}</h3>
           </Nav>
           <Nav style={{ justifyContent: 'space-around', backgroundColor: "#6E918C", color: "#F5FFFD" }}>
             <NavItem>
-              <NavLink onClick={this.toggleVod}>Vod Form</NavLink>
+              <NavLink onClick={this.handleVodClick}>Vod Form</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={this.toggleBtv}>Btv Form</NavLink>
+              <NavLink onClick={this.handleBtvClick}>Btv Form</NavLink>
             </NavItem>
             <NavItem>
               <NavLink >Uploaded XML</NavLink>
@@ -64,31 +72,35 @@ export default class Main extends React.Component {
         </Navbar>
         <Row style={{ borderColor: "hrey", borderwidth: "3%" }}>
           <Col >
-            <Collapse isOpen={this.state.openVod}>
-              <VodForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
-            </Collapse>
-            <Collapse isOpen={this.state.openBtv}>
-              <BtvForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
-            </Collapse>
+            {isVodVisible &&
+              <Collapse isOpen={this.state.open}>
+                <VodForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />
+              </Collapse>
+            }
+            {isBtvVisible &&
+              <Collapse isOpen={this.state.open}>
+                <BtvForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />
+              </Collapse>
+            }
           </Col>
           {/* <Col >
-            <Collapse isOpen={this.state.openBtv}>
-              <BtvForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
-            </Collapse>
-          </Col>
-          <Col>
-            <Collapsible trigger="UPLOADED XML">
-            </Collapsible>
-          </Col> */}
+  <Collapse isOpen={this.state.openBtv}>
+  <BtvForm
+  onsubmit={this.formSubmission}
+  token={localStorage.getItem("JWT_TOKEN")}
+  />
+  </Collapse>
+  </Col>
+  <Col>
+  <Collapsible trigger="UPLOADED XML">
+  </Collapsible>
+  </Col> */}
         </Row>
       </div >
     );

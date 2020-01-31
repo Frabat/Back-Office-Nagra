@@ -41,7 +41,7 @@ export default class Main extends React.Component {
       <div>
         <Navbar style={{ backgroundColor: "#6E918C" }}>
           <Nav>
-            <h3 style={{ color: "#F5FFFD" }}>Benvenuto {this.state.userName}</h3>
+            <h3 style={{ color: "#F5FFFD" }}>Benvenuto @User1 {this.state.userName}</h3>
           </Nav>
           <Nav style={{ justifyContent: 'space-around', backgroundColor: "#6E918C", color: "#F5FFFD" }}>
             <NavItem>

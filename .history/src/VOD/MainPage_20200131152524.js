@@ -3,7 +3,9 @@ import VodForm from "./Form";
 // import Collapsible from "react-collapsible";
 import { Card, Col, FormGroup, Row, Button, Collapse, Nav, NavItem, NavLink, Navbar } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
-//import { Form } from 'react-jsonschema-form';
+
+import { CssBaseline, Container } from "@material-ui/core";
+
 
 
 
@@ -38,10 +40,17 @@ export default class Main extends React.Component {
     console.log(this.state.userName);
     console.log(localStorage.getItem("JWT_TOKEN"));
     return (
+      <React.Fragment>
+        <h4>im here</h4>
+        <CssBaseline />
+        <Container maxWidth="lg">
+
+        </Container>
+      </React.Fragment>
       <div>
         <Navbar style={{ backgroundColor: "#6E918C" }}>
           <Nav>
-            <h3 style={{ color: "#F5FFFD" }}>Benvenuto {this.state.userName}</h3>
+            <h3 style={{ color: "#F5FFFD" }}>Benvenuto @User1 {this.state.userName}</h3>
           </Nav>
           <Nav style={{ justifyContent: 'space-around', backgroundColor: "#6E918C", color: "#F5FFFD" }}>
             <NavItem>

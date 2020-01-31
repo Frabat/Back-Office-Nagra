@@ -140,6 +140,7 @@
                                                 "uri": {
                                                     "type": "string",
                                                     "title": "uri",
+                                                    "format": "uri",
                                                     "default": "https: //1.bp.blogspot.com/-HHzOzdUeRmk/XFZQPb-hhtI/AAAAAAAAAA0/DhQAkzVs6Q83-CoStpu5A17ANnI9x70aACLcBGAs/s1600/503.jpg"
                                                 },
                                                 "id": {
