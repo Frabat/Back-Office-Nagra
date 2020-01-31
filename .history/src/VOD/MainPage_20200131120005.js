@@ -3,10 +3,11 @@ import VodForm from "./Form";
 // import Collapsible from "react-collapsible";
 import { Card, Col, FormGroup, Row, Button, Collapse, Nav, NavItem, NavLink, Navbar } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
-//import { Form } from 'react-jsonschema-form';
+// import { Form } from 'react-jsonschema-form';
 
 
-
+var isVisibleVod = false
+var isVisibleBtv = false
 export default class Main extends React.Component {
   state = {
     userName: "",
@@ -17,6 +18,9 @@ export default class Main extends React.Component {
 
 
   };
+
+
+
   componentDidMount() {
     localStorage.getItem("JWT_TOKEN")
       ? this.setState({
@@ -31,8 +35,16 @@ export default class Main extends React.Component {
     localStorage.clear();
   }
 
-  toggleVod = () => this.setState({ openVod: !this.state.openVod });
-  toggleBtv = () => this.setState({ openBtv: !this.state.openBtv });
+  toggleVod = () => {
+    isVisibleBtv = !isVisibleBtv;
+    if (this.state.openVod === false) {
+      this.setState({ openVod: this.state.openVod })
+    }
+  };
+  toggleBtv = () => {
+    isVisibleBtv = !isVisibleBtv;
+    this.setState({ openBtv: !this.state.openBtv })
+  };
 
   render() {
     console.log(this.state.userName);
@@ -65,16 +77,18 @@ export default class Main extends React.Component {
         <Row style={{ borderColor: "hrey", borderwidth: "3%" }}>
           <Col >
             <Collapse isOpen={this.state.openVod}>
-              <VodForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
+              {isVisibleVod &&
+                <VodForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />}
             </Collapse>
             <Collapse isOpen={this.state.openBtv}>
-              <BtvForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
+              {isVisibleBtv &&
+                <BtvForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />}
             </Collapse>
           </Col>
           {/* <Col >

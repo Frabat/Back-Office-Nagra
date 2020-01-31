@@ -3,10 +3,11 @@ import VodForm from "./Form";
 // import Collapsible from "react-collapsible";
 import { Card, Col, FormGroup, Row, Button, Collapse, Nav, NavItem, NavLink, Navbar } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
-//import { Form } from 'react-jsonschema-form';
+// import { Form } from 'react-jsonschema-form';
 
 
-
+var isVisibleVod = true
+var isVisibleBtv = true
 export default class Main extends React.Component {
   state = {
     userName: "",
@@ -17,6 +18,9 @@ export default class Main extends React.Component {
 
 
   };
+
+
+
   componentDidMount() {
     localStorage.getItem("JWT_TOKEN")
       ? this.setState({
@@ -31,8 +35,24 @@ export default class Main extends React.Component {
     localStorage.clear();
   }
 
-  toggleVod = () => this.setState({ openVod: !this.state.openVod });
-  toggleBtv = () => this.setState({ openBtv: !this.state.openBtv });
+  toggleVod = () => {
+    if (this.state.openVod === false) {
+      isVisibleBtv = false;
+      this.setState({ openVod: true })
+    } else {
+      isVisibleBtv = true;
+      this.setState({ openVod: false })
+    }
+  };
+  toggleBtv = () => {
+    if (this.state.openBtv === false) {
+      isVisibleVod = false;
+      this.setState({ openBtv: true })
+    } else {
+      isVisibleVod = true;
+      this.setState({ openBtv: false })
+    }
+  };
 
   render() {
     console.log(this.state.userName);
@@ -64,18 +84,20 @@ export default class Main extends React.Component {
         </Navbar>
         <Row style={{ borderColor: "hrey", borderwidth: "3%" }}>
           <Col >
-            <Collapse isOpen={this.state.openVod}>
-              <VodForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
-            </Collapse>
-            <Collapse isOpen={this.state.openBtv}>
-              <BtvForm
-                onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
-              />
-            </Collapse>
+            {isVisibleVod &&
+              <Collapse isOpen={this.state.openVod}>
+                <VodForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />
+              </Collapse>}
+            {isVisibleBtv &&
+              <Collapse isOpen={this.state.openBtv}>
+                <BtvForm
+                  onsubmit={this.formSubmission}
+                  token={localStorage.getItem("JWT_TOKEN")}
+                />
+              </Collapse>}
           </Col>
           {/* <Col >
             <Collapse isOpen={this.state.openBtv}>

@@ -1,9 +1,9 @@
 import React from "react";
 import VodForm from "./Form";
-// import Collapsible from "react-collapsible";
+import Collapsible from "react-collapsible";
 import { Card, Col, FormGroup, Row, Button, Collapse, Nav, NavItem, NavLink, Navbar } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
-//import { Form } from 'react-jsonschema-form';
+import { Form } from 'react-jsonschema-form';
 
 
 
@@ -39,10 +39,21 @@ export default class Main extends React.Component {
     console.log(localStorage.getItem("JWT_TOKEN"));
     return (
       <div>
-        <Navbar style={{ backgroundColor: "#6E918C" }}>
-          <Nav>
-            <h3 style={{ color: "#F5FFFD" }}>Benvenuto @User1 {this.state.userName}</h3>
+        <Navbar style={{ justifyContent: 'space-between', backgroundColor: "#6E918C" }}>
+          <Nav style={{ justifyContent: 'space-between', backgroundColor: "#6E918C" }}>
+            <NavItem>
+              <h3 style={{ color: "#F5FFFD" }}>Benvenuto {this.state.userName}</h3>
+            </NavItem>
+            <Nav style={{ flexDirection: 'row' }}>
+              <NavItem style={{ color: "#F5FFFD" }}>
+                <NavLink onClick={this.clearStorage}>Log-in</NavLink>
+              </NavItem>
+              <NavItem style={{ color: "#F5FFFD" }}>
+                <NavLink onClick={this.clearStorage}>Sign-out</NavLink>
+              </NavItem>
+            </Nav>
           </Nav>
+
           <Nav style={{ justifyContent: 'space-around', backgroundColor: "#6E918C", color: "#F5FFFD" }}>
             <NavItem>
               <NavLink onClick={this.toggleVod}>Vod Form</NavLink>
@@ -53,13 +64,6 @@ export default class Main extends React.Component {
             <NavItem>
               <NavLink >Uploaded XML</NavLink>
             </NavItem>
-          </Nav>
-          <Nav style={{ justifyContent: 'space-between', backgroundColor: "#6E918C" }}>
-            <Nav style={{ flexDirection: 'row' }}>
-              <NavItem style={{ color: "#F5FFFD" }}>
-                <NavLink onClick={this.clearStorage}>Log-out</NavLink>
-              </NavItem>
-            </Nav>
           </Nav>
         </Navbar>
         <Row style={{ borderColor: "hrey", borderwidth: "3%" }}>

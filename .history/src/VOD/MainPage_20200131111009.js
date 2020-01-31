@@ -1,9 +1,9 @@
 import React from "react";
 import VodForm from "./Form";
-// import Collapsible from "react-collapsible";
+import Collapsible from "react-collapsible";
 import { Card, Col, FormGroup, Row, Button, Collapse, Nav, NavItem, NavLink, Navbar } from "reactstrap";
 import BtvForm from './../BTV/BtvForm';
-//import { Form } from 'react-jsonschema-form';
+import { Form } from 'react-jsonschema-form';
 
 
 
