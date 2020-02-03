@@ -56,8 +56,8 @@ export default class Main extends React.Component {
           </Nav>
           <Nav style={{ justifyContent: 'space-between', backgroundColor: "#6E918C" }}>
             <Nav style={{ flexDirection: 'row' }}>
-              <NavItem >
-                <NavbarToggler style={{ color: "#F5FFFD" }} onClick={this.clearStorage}>Log-out</NavbarToggler>
+              <NavItem style={{ color: "#F5FFFD" }}>
+                <NavbarToggler onClick={this.clearStorage}>Log-out</NavbarToggler>
               </NavItem>
             </Nav>
           </Nav>
