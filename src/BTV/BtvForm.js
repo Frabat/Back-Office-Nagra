@@ -160,7 +160,7 @@ export default class BtvForm extends React.Component {
         uiSchema={this.uiSchema}
         ObjectFieldTemplate={this.ObjectFieldTemplate}
         FieldTemplate={this.CustomFieldTemplate}
-        onChange={this.log("changed")}
+        // onChange={this.log("changed")}
         onSubmit={this.formSubmission}
         onError={this.log("errors")}
       />

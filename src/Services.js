@@ -20,7 +20,7 @@ export const upload = (jwtToken, formdata) => {
     body: formdata,
     redirect: "follow"
   };
-  return fetch("http://esercizio.verdesca.ovh/api/upload", requestOptions)
+  return fetch("https://match-composer.dash-labs.com/api/upload", requestOptions)
     .then(response => console.log(response))
     .then(result => console.log(result))
     .catch(error => console.log("error", error));
@@ -52,7 +52,7 @@ export const login = (username, password) => {
     redirect: "follow"
   };
 
-  return fetch("http://esercizio.verdesca.ovh/api/authenticate", requestOptions)
+  return fetch("https://match-composer.dash-labs.com/api/authenticate", requestOptions)
     .then(response => response.json())
 
     .catch(error => console.log("error", error));
@@ -80,7 +80,7 @@ export const message = jwtToken => {
     redirect: "follow"
   };
 
-  fetch("http://esercizio.verdesca.ovh/api/message", requestOptions)
+  fetch("https://match-composer.dash-labs.com/api/message", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log("error", error));
