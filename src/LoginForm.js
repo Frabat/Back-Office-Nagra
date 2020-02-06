@@ -3,31 +3,44 @@ import { CardBody, Card, Button } from "reactstrap";
 import React from "react";
 import "./App.css";
 import { login } from "./Services";
+import {Redirect} from "react-router-dom"
 
 class LoginForm extends React.Component {
   state = {
     userName: "",
-    password: ""
+    password: "",
+    token : null
   };
-
-  sendData = evt => {
-    console.log("LOCAL STORAGE, ", localStorage);
-    let temp = "";
+  setLogin = () => (this.props.handler)
+  sendData = () => {
+    
+    
     login(this.state.userName, this.state.password).then(result => {
       localStorage.setItem("JWT_TOKEN", result.token);
-      console.log(localStorage);
-    });
-    evt.preventDefault();
+      console.log(localStorage)
+    })
+    .then(result => this.setState({token : localStorage.getItem("JWT_TOKEN")}))
+    
+    
   };
-  // signOut() {
-  //   localStorage.clear();
-  // }
+
+  onSubmit = (event) => {
+    this.sendData();
+    
+    event.preventDefault()
+    
+    
+    console.log(this.state);
+  }
+  
+
+
   render() {
-    return (
+    return !this.state.token ? (
       <Card>
         <CardBody>
           <form
-            onSubmit={this.sendData}
+            onSubmit={this.onSubmit}
             style={{ alignContent: "center", margin: "25" }}
           >
             <input
@@ -51,7 +64,11 @@ class LoginForm extends React.Component {
           </form>
         </CardBody>
       </Card>
-    );
+    )
+    : 
+    (
+      <Redirect to = "/" /> 
+    )
   }
 }
 export default LoginForm;

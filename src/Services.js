@@ -57,7 +57,7 @@ export const login = (username, password) => {
 
     .catch(error => console.log("error", error));
 };
-export const message = jwtToken => {
+export const message = (jwtToken) => {
   var myHeaders = new Headers();
   myHeaders.append("Connection", "keep-alive");
   myHeaders.append("Pragma", "no-cache");

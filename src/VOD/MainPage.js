@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import BtvForm from "./../BTV/BtvForm";
 import LoginForm from "../LoginForm";
+import { Redirect } from "react-router-dom";
 //import { Form } from 'react-jsonschema-form';
 
 export default class Main extends React.Component {
@@ -24,34 +25,36 @@ export default class Main extends React.Component {
     data: {},
     token: null,
     openVod: false,
-    openBtv: false
+    openBtv: false,
+    logged : false
   };
   componentDidMount() {
     localStorage.getItem("JWT_TOKEN")
       ? this.setState({
-          userName: "Admin"
+          userName: "Admin",
+          logged : true
         })
       : this.setState({
           userName: null
         });
   }
 
-  clearStorage() {
+  clearStorage = () => {
     localStorage.clear();
+    this.setState({logged : false})
   }
-
+  
   toggleVod = () => this.setState({ openVod: !this.state.openVod });
   toggleBtv = () => this.setState({ openBtv: !this.state.openBtv });
-
+  loginFunction = () => this.setState({logged : true});
   render() {
-    console.log(this.state.userName);
-    console.log(localStorage.getItem("JWT_TOKEN"));
+    
     return localStorage.getItem("JWT_TOKEN") ? (
       <div>
         <Navbar style={{ backgroundColor: "#6E918C" }}>
           <Nav>
             <h3 style={{ color: "#F5FFFD" }}>
-              Benvenuto {this.state.userName}
+              Welcome {this.state.userName}
             </h3>
           </Nav>
           <Nav
@@ -131,7 +134,7 @@ export default class Main extends React.Component {
       </div>
     ) : (
       <>
-        <LoginForm />
+        <Redirect to = "/login" />
       </>
     );
   }
