@@ -1,24 +1,11 @@
 import React from "react";
-import VodForm from "./Form";
-// import Collapsible from "react-collapsible";
-import {
-  Card,
-  Col,
-  FormGroup,
-  Row,
-  Button,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink,
-  Navbar,
-  NavbarToggler
-} from "reactstrap";
-import BtvForm from "./../BTV/BtvForm";
-import LoginForm from "../LoginForm";
 import { Redirect } from "react-router-dom";
+// import Collapsible from "react-collapsible";
+import { Col, Collapse, Nav, Navbar, NavbarToggler, NavItem, Row } from "reactstrap";
+import BtvForm from "./../BTV/BtvForm";
+import VodForm from "./Form";
 //import { Form } from 'react-jsonschema-form';
-
+import Xml from "../UPLOADED/UploadedXml"
 export default class Main extends React.Component {
   state = {
     userName: "",
@@ -26,6 +13,7 @@ export default class Main extends React.Component {
     token: null,
     openVod: false,
     openBtv: false,
+    openXml : false,
     logged : false
   };
   componentDidMount() {
@@ -43,7 +31,7 @@ export default class Main extends React.Component {
     localStorage.clear();
     this.setState({logged : false})
   }
-  
+  toggleXml = () => this.setState({openXml : !this.state.openXml})
   toggleVod = () => this.setState({ openVod: !this.state.openVod });
   toggleBtv = () => this.setState({ openBtv: !this.state.openBtv });
   loginFunction = () => this.setState({logged : true});
@@ -108,12 +96,18 @@ export default class Main extends React.Component {
             <Collapse isOpen={this.state.openVod}>
               <VodForm
                 onsubmit={this.formSubmission}
-                token={localStorage.getItem("JWT_TOKEN")}
+                
               />
             </Collapse>
             <Collapse isOpen={this.state.openBtv}>
               <BtvForm
                 onsubmit={this.formSubmission}
+                
+              />
+            </Collapse>
+            <Collapse isOpen={this.state.openXml}>
+              <Xml
+                
                 token={localStorage.getItem("JWT_TOKEN")}
               />
             </Collapse>

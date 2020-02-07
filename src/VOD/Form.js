@@ -19,7 +19,7 @@ const uiSchema = {
 export default class VodForm extends React.Component {
   state = {
     data: {},
-    jwtToken: this.props.token
+    jwtToken: localStorage.getItem("JWT_TOKEN")
   };
 
   CustomFieldTemplate = props => {
@@ -114,8 +114,8 @@ export default class VodForm extends React.Component {
     this.setState({
       data: temp
     });
-    console.log(localStorage.JWT_TOKEN);
-    upload(this.state.jwtToken, temp);
+    console.log(this.state.jwtToken);
+    // upload(localStorage.getItem("JWT_TOKEN"), temp);
     filesaver.saveAs(
       new Blob([temp], {
         type: 'application/xml; version= "1.0" ;encoding = "UTF-8"'

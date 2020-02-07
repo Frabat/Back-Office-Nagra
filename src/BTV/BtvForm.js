@@ -1,10 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Form from "react-jsonschema-form";
+import { Card, CardBody } from "reactstrap";
+import { upload } from "../Services";
 import schema from "./BtvSchema.json";
 import "./BtvStyle.scss";
-import { CardBody, Card } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { upload } from "../Services";
 var convert = require("xml-js");
 var filesaver = require("file-saver");
 

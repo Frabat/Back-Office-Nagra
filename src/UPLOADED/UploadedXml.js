@@ -11,10 +11,10 @@ class Xml extends React.Component {
   }
   xmlRetrieve = () => {
     
-    console.log(this.state.data)
-    message(this.state.data).then(
-      result => this.setState({data : result})
-    )
+    
+    // message(localStorage.getItem("JWT_TOKEN")).then(
+    //   result => console.log("RISULTATO : ", result)
+    // )
 
   };
   render() {
