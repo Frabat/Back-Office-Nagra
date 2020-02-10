@@ -115,6 +115,7 @@ export default class VodForm extends React.Component {
       data: temp
     });
     console.log(this.state.jwtToken);
+    // upload(temp)
     // upload(localStorage.getItem("JWT_TOKEN"), temp);
     filesaver.saveAs(
       new Blob([temp], {

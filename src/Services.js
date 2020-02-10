@@ -21,8 +21,7 @@ export const upload = (jwtToken, formdata) => {
     headers: myHeaders,
     body: formdata,
     redirect: "follow",
-    
-    
+
   };
   return fetch(
     "https://match-composer.dash-labs.com/api/upload",
@@ -32,6 +31,26 @@ export const upload = (jwtToken, formdata) => {
     .then(result => console.log(result))
     .catch(error => console.log("error", error));
 };
+
+// export const upload = xmlData => {
+//   var SftpUpload = require("sftp-upload");
+//   // var fs = require("fs");
+//   var options = {
+//     host: "cimtest@ftp.cicd.cicd-vpc.otvse-cicd.com",
+//     password: "cim",
+//     remoteDir: "/Input/pmh",
+//     path: xmlData
+//   };
+//   var sftp = new SftpUpload(options);
+//   sftp
+//     .on("error", function(error) {
+//       throw error;
+//     })
+//     .on("completed", function() {
+//       console.log("Completed");
+//     })
+//     .upload();
+// };
 
 export const login = (username, password) => {
   var myHeaders = new Headers();
@@ -68,7 +87,7 @@ export const login = (username, password) => {
 
     .catch(error => console.log("error", error));
 };
-export const message = (jwtToken) => {
+export const message = jwtToken => {
   var myHeaders = new Headers();
   myHeaders.append("Connection", "keep-alive");
   myHeaders.append("Pragma", "no-cache");
